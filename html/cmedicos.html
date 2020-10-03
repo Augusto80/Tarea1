@@ -5,7 +5,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Famemedi</title>
+    <title>Medico - Famemedi</title>
 
     <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -45,18 +45,18 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="cmedico.html">
-                            <p><span style="color: #000000; font-size: 115%;">C.Medico</span></p>
+                        <a class="nav-link" href="cmedicos.html">
+                            <p><span style="color: #000000; font-size: 115%;">Crear Medico</span></p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="cpersonal.html">
-                            <p><span style="color: #000000; font-size: 115%;">C.Personal Administrativo</span></p>
+                            <p><span style="color: #000000; font-size: 115%;">Crear Personal Administrativo</span></p>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="login.html">
+                        <a class="nav-link" href="../index.html">
                             <p><span style="color: #000000; font-size: 115%;">Salir</span></p>
                         </a>
                     </li>
@@ -66,48 +66,56 @@
     </nav>
 </header>
 
-<body>
 
+
+
+<body>
     <br><br>
 
     <div class="container">
+
+        <!--form id="formBorrar">
+            <input type="text" id="Bid" name="">
+            <button type="submit"> Borrar</button>
+        </form-->
+
         <section class="text-center dark-grey-text mb-5">
 
             <div class="card">
                 <div class="card-body rounded-top border-top p-5">
 
                     <!-- Section heading -->
-                    <h3 class="font-weight-bold my-4">Crear Medico</h3>
+                    <h3 class="font-weight-bold my-4 text-danger">Crear Medico</h3>
 
                     <form class="mb-4 mx-md-5" action="">
 
                         <div class="row">
+
+                            <div class="col-md-6 mb-4">
+                                <input type="text" id="rmedico" class="form-control"
+                                placeholder="Registro Medico">
+                            </div>
+
+
                             <div class="col-md-6 mb-4">
 
                                 <!-- Identificacion -->
                                 <input type="text" id="identificacion" class="form-control"
                                     placeholder="N° identificacion">
-
                             </div>
-                            <div class="col-md-6 mb-4">
 
-                                <!-- Registro medico -->
-                                <input type="text" id="registro" class="form-control"
-                                    placeholder="Registro Medico">
-
-                            </div>
                         </div>
 
                         <div class="row">
                             <div class="col-md-6 mb-4">
 
-                                <!-- Name -->
+                                <!-- Nombres -->
                                 <input type="text" id="nombres" class="form-control" placeholder="Nombres">
 
                             </div>
                             <div class="col-md-6 mb-4">
 
-                                <!-- Email -->
+                                <!-- Apellidos -->
                                 <input type="text" id="apellidos" class="form-control" placeholder="Apellidos">
 
                             </div>
@@ -117,16 +125,16 @@
                             <div class="col-md-6 mb-4">
 
                                 <!-- Name -->
-                                <input type="text" id="especialidad" class="form-control" placeholder="Especialidad">
+                                <input type="text" id="especialidad" class="form-control" placeholder="especialidad">
 
                             </div>
                             <div class="col-md-6 mb-4">
 
                                 <!-- Email -->
-                                <input type="number" id="celular" class="form-control" placeholder="Celular">
+                                <input type="text" id="celular" class="form-control" placeholder="Celular">
 
                             </div>
-                        </div>
+                        </div>                                        
 
                         <div class="row">
 
@@ -134,40 +142,86 @@
                                     <a href="#" style="background-color: #1C8CE9; color: aliceblue; padding: 3%;" class="boton" id="btnRegistrar">Crear Medico</a>
                             </div>
 
-                            <div class="col-md-6 mb-4 text-right">
+                            <div class="col-md-6 mb-4 text-center">
                                 <input style="background-color: #be1717; color: aliceblue ; border: #be1717; padding: 3%;" type="reset" value="Borrar Información">
                             </div>
-                        </div>    
+                        </div>  
 
+                        
                     </form>
+
+                   
+                </div>
                 </div>
             </div>
+            
         </section>
         <!--Section: Content-->
 
         <caption>
-            <h3>REGISTRO DE MEDICOS</h3> 
+            <h3 class="font-weight-bold my-4 text-danger">Registro De Medicos</h3>
         </caption>
-        <table id="tbmedicos" width="80%" cellspacing="0" cellpadding="0">
-           <thead>
-            <tr>    
-                <th><p>Identificacion</p></th>
-                <th><p>Registro Medico</p></th>
-                <th><p>Nombres</p></th>
-                <th><p>Apellidos</p></th>
-                <th><p>Especialidad</p></th>
-                <th><p>Celular</p></th>
-            </tr>
-        </thead>     
-        <tbody>
-        
-        </tbody> 
-        </table>  
-    </div>
+        <div class="table-responsive-xl">
+            <table id="tbmedicos" class="table table-bordered">
+                <thead class="text-center text-primary">
+                    <tr>       
+                        <th>Registro Medico</th>                        
+                        <th>Identificacion</th>       
+                        <th >Nombres</th>
+                        <th >Apellidos</th>
+                        <th >Especialidad</th>
+                        <th >Celular</th>>
+                        <th >Editar</th>
+                       
+                    </tr>
+                </thead>     
+                <tbody>
+                
+                </tbody> 
+            </table>
+          </div>
 
-    <script type="text/javascript" src="../js/registrarmedico.js"> </script>
-    <script type="text/javascript" src="../js/mostrartablamedico.js"> </script>
+        <!--table id="tbpacientes" width="80%" cellspacing="0" cellpadding="0">
+            <thead>
+                <tr>    
+                    <th><p>Tipo De Documento</p></th>
+                    <th><p>Identificacion</p></th>
+                    <th><p>Nombres</p></th>
+                    <th><p>Apellidos</p></th>
+                    <th><p>Correo</p></th>
+                    <th><p>Celular</p></th>
+                    <th><p>Dirección</p></th>
+                    <th><p>Ciudad</p></th>
+                    <th><p>Sintomas</p></th>
+                </tr>
+            </thead>     
+            <tbody>
+            
+            </tbody> 
+        </table-->  
 
+      
+
+       
+    
+
+    <script type="text/javascript" src="../js/registrarmedicos.js"> </script> 
+    <script type="text/javascript" src="../js/mostrartablamedicos.js"> </script>
+    <!--script>
+        var FormularioBorrar = document.getElementById("formBorrar")
+
+        FormularioBorrar.addEventListener ('submit',function(){
+            var idBorrar = document.getElementById ("Bid").value;
+
+            if (idBorrar.length >=1){
+                localStorage.removeItem(idBorrar)
+            }
+            
+        })
+
+    </script-->
+    
+    
 </body>
 
 </html>

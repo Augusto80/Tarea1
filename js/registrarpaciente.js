@@ -9,16 +9,15 @@ var cTipo = [],
     cSintomas = []; 
 
     if (localStorage.getItem('Tipo') != null) {
-        cTipo = JSON.parse (localStorage.getItem('Tipo'));
-        cIdentificacion = JSON.parse (localStorage.getItem('Identificacion'));
-        cNombres = JSON.parse (localStorage.getItem('Nombres')); 
-        cApellidos = JSON.parse (localStorage.getItem('Apellidos')); 
-        cEmail = JSON.parse (localStorage.getItem('Email')); 
-        cCelular = JSON.parse (localStorage.getItem('Celular')); 
-        cDireccion = JSON.parse (localStorage.getItem('Direccion'));
-        cCiudad = JSON.parse (localStorage.getItem('Ciudad'));
+         var cTipo = JSON.parse (localStorage.getItem('Tipo')),
+        cIdentificacion = JSON.parse (localStorage.getItem('Identificacion')),
+        cNombres = JSON.parse (localStorage.getItem('Nombres')),
+        cApellidos = JSON.parse (localStorage.getItem('Apellidos')),
+        cEmail = JSON.parse (localStorage.getItem('Email')),
+        cCelular = JSON.parse (localStorage.getItem('Celular')), 
+        cDireccion = JSON.parse (localStorage.getItem('Direccion')),
+        cCiudad = JSON.parse (localStorage.getItem('Ciudad')),
         cSintomas = JSON.parse (localStorage.getItem('Sintomas'));
-
     }
 
 var elementoBotonRegistrar = document.querySelector('#btnRegistrar');
@@ -32,14 +31,13 @@ function registrarpaciente() {
         nNombres = document.querySelector('#nombres').value,
         nApellidos = document.querySelector('#apellidos').value,
         nEmail = document.querySelector('#email').value,
-        nCelular = document.querySelector('#celular').value;
+        nCelular = document.querySelector('#celular').value,
         nDireccion = document.querySelector('#direccion').value,
         nCiudad = document.querySelector('#ciudad').value,
         nSintomas = document.querySelector('#sintomas').value;
 
-        
-        cIdentificacion.push(nIdentificacion);
         cTipo.push(nTipo); 
+        cIdentificacion.push(nIdentificacion);
         cNombres.push(nNombres);
         cApellidos.push(nApellidos);
         cEmail.push(nEmail);
@@ -48,16 +46,21 @@ function registrarpaciente() {
         cCiudad.push(nCiudad);
         cSintomas.push(nSintomas);
 
-        localStorage.setItem('Tipo', JSON.stringify(cTipo));
-        localStorage.setItem('Identificacion', JSON.stringify(cIdentificacion));
-        localStorage.setItem('Nombres', JSON.stringify(cNombres));
-        localStorage.setItem('Apellidos', JSON.stringify(cApellidos));
-        localStorage.setItem('Email', JSON.stringify(cEmail));
-        localStorage.setItem('Celular', JSON.stringify(cCelular));
-        localStorage.setItem('Direccion', JSON.stringify(cDireccion));
-        localStorage.setItem('Ciudad', JSON.stringify(cCiudad));
-        localStorage.setItem('Sintomas', JSON.stringify(cSintomas));
-
-    llenarTabla();
-
+        llenarTabla();
+        guardar(cTipo,cIdentificacion,cNombres,cApellidos,cEmail,cCelular,cDireccion,cCiudad,cSintomas); 
 }
+
+function guardar (pTipo,pIdentificacion,pNombres,pApellidos,pEmail,pCelular,pDireccion,pCiudad,pSintomas){
+
+    localStorage.setItem('Tipo', JSON.stringify(pTipo));
+    localStorage.setItem('Identificacion', JSON.stringify(pIdentificacion));
+    localStorage.setItem('Nombres', JSON.stringify(pNombres));
+    localStorage.setItem('Apellidos', JSON.stringify(pApellidos));
+    localStorage.setItem('Email', JSON.stringify(pEmail));
+    localStorage.setItem('Celular', JSON.stringify(pCelular));
+    localStorage.setItem('Direccion', JSON.stringify(pDireccion));
+    localStorage.setItem('Ciudad', JSON.stringify(pCiudad));
+    localStorage.setItem('Sintomas', JSON.stringify(pSintomas));
+        
+  }
+

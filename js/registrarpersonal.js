@@ -1,3 +1,4 @@
+
 var cIdentificacion = [],
     cCargos = [],
     cNombres = [],
@@ -6,12 +7,12 @@ var cIdentificacion = [],
     cCelular = [];
 
 if (localStorage.getItem('Identificacion') != null) {
-    cIdentificacion = JSON.parse(localStorage.getItem('Identificacion'));
-    cCargos = JSON.parse(localStorage.getItem('Cargos'));
-    cNombres = JSON.parse(localStorage.getItem('Nombres'));
-    cApellidos = JSON.parse(localStorage.getItem('Apellidos'));
-    cEmail = JSON.parse(localStorage.getItem('Email'));
-    cCelular = JSON.parse(localStorage.getItem('Celular'));
+     var   cIdentificacion = JSON.parse(localStorage.getItem('Identificacion')),
+        cCargos = JSON.parse(localStorage.getItem('Cargos')),
+        cNombres = JSON.parse(localStorage.getItem('Nombres')),
+        cApellidos = JSON.parse(localStorage.getItem('Apellidos')),
+        cEmail = JSON.parse(localStorage.getItem('Email')),
+        cCelular = JSON.parse(localStorage.getItem('Celular'));
 }
 
 var elementoBotonRegistrar = document.querySelector('#btnRegistrar');
@@ -28,7 +29,6 @@ function registrarpersonal() {
         nEmail = document.querySelector('#email').value,
         nCelular = document.querySelector('#celular').value;
 
-
     cIdentificacion.push(nIdentificacion);
     cCargos.push(nCargos);
     cNombres.push(nNombres);
@@ -36,13 +36,18 @@ function registrarpersonal() {
     cEmail.push(nEmail);
     cCelular.push(nCelular);
 
-    localStorage.setItem('Identificacion', JSON.stringify(cIdentificacion));
-    localStorage.setItem('Cargos', JSON.stringify(cNombres));
-    localStorage.setItem('Nombres', JSON.stringify(cNombres));
-    localStorage.setItem('Apellidos', JSON.stringify(cApellidos));
-    localStorage.setItem('Email', JSON.stringify(cEmail));
-    localStorage.setItem('Celular', JSON.stringify(cCelular));
-
+    
+    guardar(cIdentificacion, cCargos, cNombres, cApellidos, cEmail, cCelular);
     llenarTabla();
+}
+
+function guardar(pIdentificacion, pCargos, pNombres, pApellidos, pEmail, pCelular) {
+
+    localStorage.setItem('Identificacion', JSON.stringify(pIdentificacion));
+    localStorage.setItem('Cargos', JSON.stringify(pCargos));
+    localStorage.setItem('Nombres', JSON.stringify(pNombres));
+    localStorage.setItem('Apellidos', JSON.stringify(pApellidos));
+    localStorage.setItem('Email', JSON.stringify(pEmail));
+    localStorage.setItem('Celular', JSON.stringify(pCelular));
 
 }
